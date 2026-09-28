@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach API",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "restart": false,
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Attach Worker",
+      "type": "node",
+      "request": "attach",
+      "port": 9230,
+      "restart": false,
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "API + Worker",
+      "configurations": ["Attach API", "Attach Worker"],
+      "stopAll": false
+    }
+  ]
+}

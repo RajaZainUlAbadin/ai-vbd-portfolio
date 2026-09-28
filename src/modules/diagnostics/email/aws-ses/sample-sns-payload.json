@@ -1,0 +1,12 @@
+{
+  "Type": "Notification",
+  "MessageId": "aws-sns-test-message-id-001",
+  "TopicArn": "arn:aws:sns:eu-central-1:123456789012:ses-email-events",
+  "Subject": "Amazon SES Email Receipt Notification",
+  "Message": "{\"notificationType\":\"Received\",\"mail\":{\"timestamp\":\"2026-07-26T10:30:00.000Z\",\"source\":\"customer@example.com\",\"messageId\":\"0100019999999999-abcd1234\",\"destination\":[\"zain@connect.nestratech.com\"],\"headersTruncated\":false,\"headers\":[{\"name\":\"From\",\"value\":\"customer@example.com\"},{\"name\":\"To\",\"value\":\"zain@connect.nestratech.com\"},{\"name\":\"Subject\",\"value\":\"Interested in your proposal\"}]},\"receipt\":{\"timestamp\":\"2026-07-26T10:30:01.000Z\",\"processingTimeMillis\":250,\"recipients\":[\"zain@connect.nestratech.com\"],\"spamVerdict\":{\"status\":\"PASS\"},\"virusVerdict\":{\"status\":\"PASS\"},\"action\":{\"type\":\"S3\",\"bucketName\":\"nestra-email-inbound\",\"objectKey\":\"emails/0100019999999999-abcd1234\"}}}",
+  "Timestamp": "2026-07-26T10:30:01.000Z",
+  "SignatureVersion": "1",
+  "Signature": "fake-signature",
+  "SigningCertURL": "https://sns.eu-central-1.amazonaws.com/cert.pem",
+  "UnsubscribeURL": "https://sns.eu-central-1.amazonaws.com/unsubscribe"
+}

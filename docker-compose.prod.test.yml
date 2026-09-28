@@ -1,0 +1,38 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: dockerfile.prod
+    container_name: vbd-api-prod-test
+    ports:
+      - '5000:5000'
+    env_file:
+      - .env.docker
+    depends_on:
+      # - mongo
+      - redis
+    command: ['node', 'dist/app/server.js']
+
+  worker:
+    build:
+      context: .
+      dockerfile: dockerfile.prod
+    container_name: vbd-worker-prod-test
+    env_file:
+      - .env.docker
+    depends_on:
+      # - mongo
+      - redis
+    command: ['node', 'dist/queues/workers/index.js']
+
+  mongo:
+    image: mongo:8
+    container_name: vbd-mongo-prod-test
+    ports:
+      - '27018:27017'
+
+  redis:
+    image: redis:7
+    container_name: vbd-redis-prod-test
+    ports:
+      - '6378:6379'

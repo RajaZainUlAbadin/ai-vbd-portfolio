@@ -1,0 +1,35 @@
+node_modules
+.env
+.env.*
+dist
+build
+coverage
+logs
+*.log
+ai-context.generated.md
+
+# Portfolio security
+.env
+.env.*
+!.env.example
+
+# Secrets / certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Local databases / dumps
+*.dump
+*.bak
+*.sql
+
+# Logs
+*.log
+logs/
+
+# Runtime/build
+node_modules/
+dist/
+coverage/

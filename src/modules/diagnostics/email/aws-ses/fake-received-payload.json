@@ -1,0 +1,56 @@
+{
+  "notificationType": "Received",
+  "mail": {
+    "timestamp": "2026-07-26T10:30:00.000Z",
+    "source": "customer@example.com",
+    "messageId": "0100019999999999-abcd1234",
+    "destination": ["zain@connect.nestratech.com"],
+    "headersTruncated": false,
+    "headers": [
+      {
+        "name": "From",
+        "value": "customer@example.com"
+      },
+      {
+        "name": "To",
+        "value": "zain@connect.nestratech.com"
+      },
+      {
+        "name": "Subject",
+        "value": "Interested in your proposal"
+      },
+      {
+        "name": "Message-ID",
+        "value": "<0100019999999999-abcd1234@amazonses.com>"
+      }
+    ],
+    "commonHeaders": {
+      "from": ["customer@example.com"],
+      "to": ["zain@connect.nestratech.com"],
+      "subject": "Interested in your proposal"
+    }
+  },
+  "receipt": {
+    "timestamp": "2026-07-26T10:30:01.000Z",
+    "processingTimeMillis": 250,
+    "recipients": ["zain@connect.nestratech.com"],
+    "spamVerdict": {
+      "status": "PASS"
+    },
+    "virusVerdict": {
+      "status": "PASS"
+    },
+    "spfVerdict": {
+      "status": "PASS"
+    },
+    "dkimVerdict": {
+      "status": "PASS"
+    },
+    "action": {
+      "type": "S3",
+      "topicArn": "arn:aws:sns:eu-central-1:123456789012:ses-email-events",
+      "bucketName": "nestra-email-inbound",
+      "objectKey": "emails/0100019999999999-abcd1234"
+    }
+  }
+}
